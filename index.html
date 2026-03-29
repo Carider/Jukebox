@@ -22,7 +22,6 @@ nav{position:sticky;top:0;z-index:200;background:#0a0a0aee;backdrop-filter:blur(
 .nav-av{width:28px;height:28px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);cursor:pointer}
 .page{display:none}.page.active{display:block}
 .page-inner{max-width:700px;margin:0 auto;padding:32px 16px 80px}
-/* HERO */
 #page-home{position:relative;min-height:100vh}
 .hero{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 24px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:url('hero.jpg') center center/cover no-repeat;z-index:0}
@@ -146,7 +145,6 @@ nav{position:sticky;top:0;z-index:200;background:#0a0a0aee;backdrop-filter:blur(
 footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;margin-top:40px}
 footer .foot-logo{font-size:1.1rem;font-weight:900;color:var(--green);letter-spacing:1px;margin-bottom:6px}
 footer p{font-size:.74rem;color:var(--sub);margin-top:4px}
-/* VERIFY BANNER */
 .verify-banner{background:#1a1200;border-bottom:1px solid #4a3500;padding:10px 20px;text-align:center;font-size:.8rem;color:#fbbf24;display:flex;align-items:center;justify-content:center;gap:10px}
 </style>
 </head>
@@ -159,20 +157,21 @@ footer p{font-size:.74rem;color:var(--sub);margin-top:4px}
 
 <nav>
   <div class="nav-logo" onclick="goPage('home')" style="display:flex;align-items:center;gap:8px">
-  <svg width="28" height="28" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="nt" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3dd6b0"/><stop offset="100%" stop-color="#1a9e82"/></linearGradient>
-      <linearGradient id="nw" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8B5E3C"/><stop offset="50%" stop-color="#6B3F1F"/><stop offset="100%" stop-color="#8B5E3C"/></linearGradient>
-    </defs>
-    <rect width="76" height="76" rx="14" fill="url(#nw)"/>
-    <rect x="6" y="6" width="64" height="64" rx="10" fill="url(#nt)"/>
-    <path d="M14,68 L14,36 Q14,10 38,8 Q62,10 62,36 L62,68 Z" fill="white"/>
-    <path d="M22,35 Q22,16 38,14 Q54,16 54,35 L54,40 L22,40 Z" fill="url(#nt)"/>
-  </svg>
-  JUKEBOX
-</div>
+    <svg width="28" height="28" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="nt" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3dd6b0"/><stop offset="100%" stop-color="#1a9e82"/></linearGradient>
+        <linearGradient id="nw" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8B5E3C"/><stop offset="50%" stop-color="#6B3F1F"/><stop offset="100%" stop-color="#8B5E3C"/></linearGradient>
+      </defs>
+      <rect width="76" height="76" rx="14" fill="url(#nw)"/>
+      <rect x="6" y="6" width="64" height="64" rx="10" fill="url(#nt)"/>
+      <path d="M14,68 L14,36 Q14,10 38,8 Q62,10 62,36 L62,68 Z" fill="white"/>
+      <path d="M22,35 Q22,16 38,14 Q54,16 54,35 L54,40 L22,40 Z" fill="url(#nt)"/>
+    </svg>
+    JUKEBOX
+  </div>
   <div class="nav-center">
     <button class="nb" id="nb-feed" onclick="goPage('feed')">Feed</button>
+    <button class="nb" id="nb-discover" onclick="goPage('discover')">Discover</button>
     <button class="nb" id="nb-leaderboard" onclick="goPage('leaderboard')">Leaderboard</button>
     <button class="nb" id="nb-about" onclick="goPage('about')">About</button>
   </div>
@@ -221,16 +220,12 @@ footer p{font-size:.74rem;color:var(--sub);margin-top:4px}
         <div class="tab" onclick="switchAuthTab('forgot')">Forgot Password</div>
       </div>
       <div id="auth-alert"></div>
-
-      <!-- LOGIN -->
       <div id="form-login">
         <div class="field"><label>SU Email</label><input class="inp" id="l-email" placeholder="netid@g.syr.edu" type="email" autocomplete="email"></div>
         <div class="field"><label>Password</label><input class="inp" type="password" id="l-pass" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()"></div>
         <button class="btn btn-green" style="width:100%;justify-content:center;margin-bottom:10px" onclick="doLogin()">Log In</button>
         <div style="text-align:center"><button class="btn-link" onclick="switchAuthTab('forgot')">Forgot your password?</button></div>
       </div>
-
-      <!-- REGISTER -->
       <div id="form-register" style="display:none">
         <div class="alert alert-info" style="margin-bottom:14px">Only <b>@g.syr.edu</b> email addresses are allowed.</div>
         <div class="field"><label>SU Email</label><input class="inp" id="r-email" placeholder="netid@g.syr.edu" type="email" autocomplete="email"></div>
@@ -239,8 +234,6 @@ footer p{font-size:.74rem;color:var(--sub);margin-top:4px}
         <div class="field"><label>Confirm Password</label><input class="inp" type="password" id="r-pass2" placeholder="••••••••" autocomplete="new-password" onkeydown="if(event.key==='Enter')doRegister()"></div>
         <button class="btn btn-green" style="width:100%;justify-content:center" onclick="doRegister()">Create Account</button>
       </div>
-
-      <!-- FORGOT PASSWORD -->
       <div id="form-forgot" style="display:none">
         <p style="font-size:.82rem;color:var(--muted);margin-bottom:14px;line-height:1.6">Enter your <b style="color:var(--text)">@g.syr.edu</b> email and we'll send you a password reset link.</p>
         <div class="field"><label>SU Email</label><input class="inp" id="f-email" placeholder="netid@g.syr.edu" type="email" autocomplete="email" onkeydown="if(event.key==='Enter')doForgotPassword()"></div>
@@ -267,6 +260,25 @@ footer p{font-size:.74rem;color:var(--sub);margin-top:4px}
 <div class="page" id="page-profile">
   <div class="page-inner" style="padding-top:32px">
     <div id="profile-wrap"><div class="loading">Loading…</div></div>
+  </div>
+</div>
+
+<!-- DISCOVER -->
+<div class="page" id="page-discover">
+  <div class="page-inner">
+    <div style="margin-bottom:24px">
+      <div class="sec-label">Community</div>
+      <div class="sec-title">Find Users</div>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:20px">
+      <input class="inp" id="search-inp" placeholder="Search by username…" onkeydown="if(event.key==='Enter')searchUsers()">
+      <button class="btn btn-green" onclick="searchUsers()">Search</button>
+    </div>
+    <div id="search-results"></div>
+    <div style="margin-top:28px">
+      <div class="stitle">All Users</div>
+      <div id="all-users"><div class="loading">Loading…</div></div>
+    </div>
   </div>
 </div>
 
@@ -332,12 +344,10 @@ footer p{font-size:.74rem;color:var(--sub);margin-top:4px}
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script>
-// ══ CONFIG ════════════════════════════════════════════
 const SPOTIFY_CLIENT_ID = "ce9454abac534097b74020fd1567f5a4";
 const ADMINS = ['car_rider23'];
 const ALLOWED_DOMAIN = 'g.syr.edu';
 const REDIRECT_URI = 'https://carider.github.io/Jukebox/';
-
 const firebaseConfig = {
   apiKey:"AIzaSyDnLhMsTyxqUJQWzHB1CrJHwZuADiiba34",
   authDomain:"spotstats-1d306.firebaseapp.com",
@@ -346,51 +356,37 @@ const firebaseConfig = {
   messagingSenderId:"434659332898",
   appId:"1:434659332898:web:fa863e2b3a85b5c9258b7b"
 };
-
 firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db   = firebase.firestore();
-const FV   = firebase.firestore.FieldValue;
-
-// ══ PKCE ══════════════════════════════════════════════
-const rand   = n=>{const a=new Uint8Array(n);crypto.getRandomValues(a);return[...a].map(b=>b.toString(16).padStart(2,'0')).join('')};
-const sha256 = s=>crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));
-const b64url = b=>btoa(String.fromCharCode(...new Uint8Array(b))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
-
-// ══ STATE ═════════════════════════════════════════════
-let CU=null, lbTab='tracks', profUid=null, profTab='posts', attachedTrack=null;
-let profData={user:null,posts:[],tops:null};
-let lbData={profiles:[],tops:[]};
-
-const isAdmin = ()=>CU&&ADMINS.includes(CU.username);
-const esc     = s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-const medal   = i=>i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1;
-const medalCls= i=>i===0?'gold':i===1?'silver':i===2?'bronze':'';
-const clean   = v=>(v===undefined||v===null)?'':v;
-const av      = u=>u?.spotifyAvatar||u?.avatar||genAv(u?.username);
-
+const auth=firebase.auth(),db=firebase.firestore(),FV=firebase.firestore.FieldValue;
+const rand=n=>{const a=new Uint8Array(n);crypto.getRandomValues(a);return[...a].map(b=>b.toString(16).padStart(2,'0')).join('')};
+const sha256=s=>crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));
+const b64url=b=>btoa(String.fromCharCode(...new Uint8Array(b))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+let CU=null,lbTab='tracks',profUid=null,profTab='posts',attachedTrack=null;
+let profData={user:null,posts:[],tops:null},lbData={profiles:[],tops:[]};
+const isAdmin=()=>CU&&ADMINS.includes(CU.username);
+const esc=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const medal=i=>i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1;
+const medalCls=i=>i===0?'gold':i===1?'silver':i===2?'bronze':'';
+const clean=v=>(v===undefined||v===null)?'':v;
+const av=u=>u?.spotifyAvatar||u?.avatar||genAv(u?.username);
 function timeAgo(d){
   if(!d)return'?';
   const dt=d?.toDate?d.toDate():new Date(d);
   const s=Math.floor((Date.now()-dt)/1000);
-  if(s<60)return s+'s'; if(s<3600)return Math.floor(s/60)+'m';
-  if(s<86400)return Math.floor(s/3600)+'h'; return Math.floor(s/86400)+'d';
+  if(s<60)return s+'s';if(s<3600)return Math.floor(s/60)+'m';
+  if(s<86400)return Math.floor(s/3600)+'h';return Math.floor(s/86400)+'d';
 }
-
 function genAv(name){
   const hue=(name||'').split('').reduce((a,c)=>a+c.charCodeAt(0),0)%360;
   const init=(name||'?').slice(0,2).toUpperCase();
   const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="4" fill="hsl(${hue},50%,28%)"/><text x="20" y="26" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#39FF14">${init}</text></svg>`;
   return 'data:image/svg+xml;base64,'+btoa(svg);
 }
-
 function showAlert(id,msg,type='err'){
   const el=document.getElementById(id);if(!el)return;
   el.innerHTML=msg?`<div class="alert alert-${type}">${msg}</div>`:'';
   if(msg&&type==='err')setTimeout(()=>{if(el.innerHTML.includes(msg.slice(0,10)))el.innerHTML=''},6000);
 }
-
-// ══ NAV ═══════════════════════════════════════════════
 function updateNav(){
   const nr=document.getElementById('nav-right');
   if(CU){
@@ -403,66 +399,47 @@ function updateNav(){
       <button class="nb nb-green" onclick="goPage('auth','register')">Sign Up</button>`;
   }
 }
-
 function goPage(page,param){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
   document.getElementById('page-'+page)?.classList.add('active');
   document.getElementById('nb-'+page)?.classList.add('active');
-  if(page==='feed')        loadFeed();
-  if(page==='leaderboard') loadLeaderboard();
-  if(page==='about')       renderAbout();
-  if(page==='profile')     {profUid=param||CU?.id;profTab='posts';renderProfile();}
-  if(page==='settings')    renderSettings();
-  if(page==='auth')        switchAuthTab(param||'login');
+  if(page==='feed')loadFeed();
+  if(page==='discover')loadDiscover();
+  if(page==='leaderboard')loadLeaderboard();
+  if(page==='about')renderAbout();
+  if(page==='profile'){profUid=param||CU?.id;profTab='posts';renderProfile();}
+  if(page==='settings')renderSettings();
+  if(page==='auth')switchAuthTab(param||'login');
 }
-
-// ══ AUTH ══════════════════════════════════════════════
 function switchAuthTab(tab){
-  ['login','register','forgot'].forEach(t=>{
-    document.getElementById('form-'+t).style.display=t===tab?'block':'none';
-  });
-  document.querySelectorAll('#auth-tabs .tab').forEach((t,i)=>
-    t.classList.toggle('active',['login','register','forgot'][i]===tab)
-  );
+  ['login','register','forgot'].forEach(t=>{document.getElementById('form-'+t).style.display=t===tab?'block':'none';});
+  document.querySelectorAll('#auth-tabs .tab').forEach((t,i)=>t.classList.toggle('active',['login','register','forgot'][i]===tab));
   showAlert('auth-alert','');
 }
-
 async function doRegister(){
   const email=(document.getElementById('r-email').value||'').trim().toLowerCase();
   const u=(document.getElementById('r-user').value||'').trim().toLowerCase();
   const p=document.getElementById('r-pass').value;
   const p2=document.getElementById('r-pass2').value;
-
   if(!email||!u||!p){showAlert('auth-alert','Fill in all fields.');return}
   if(!email.endsWith('@'+ALLOWED_DOMAIN)){showAlert('auth-alert',`Only @${ALLOWED_DOMAIN} email addresses are allowed.`);return}
   if(u.length<3||u.length>20){showAlert('auth-alert','Username must be 3–20 characters.');return}
   if(!/^[a-z0-9_]+$/.test(u)){showAlert('auth-alert','Username: letters, numbers, and _ only.');return}
   if(p.length<6){showAlert('auth-alert','Password must be at least 6 characters.');return}
   if(p!==p2){showAlert('auth-alert','Passwords do not match.');return}
-
   const unDoc=await db.collection('usernames').doc(u).get();
   if(unDoc.exists){showAlert('auth-alert','Username already taken.');return}
-
   try{
     const cred=await auth.createUserWithEmailAndPassword(email,p);
     await cred.user.sendEmailVerification();
-    const uid=cred.user.uid, now=new Date().toISOString();
+    const uid=cred.user.uid,now=new Date().toISOString();
     const user={id:uid,username:u,email,bio:'',avatar:'',country:'',spotifyLinked:false,spotifyDisplayName:'',spotifyAvatar:'',spotifyId:'',followers:0,joinedAt:now,updatedAt:now};
-    await Promise.all([
-      db.collection('users').doc(uid).set(user),
-      db.collection('usernames').doc(u).set({uid})
-    ]);
+    await Promise.all([db.collection('users').doc(uid).set(user),db.collection('usernames').doc(u).set({uid})]);
     showAlert('auth-alert',`Account created! A verification email has been sent to <b>${email}</b>. Please verify before logging in.`,'ok');
-    document.getElementById('r-email').value='';
-    document.getElementById('r-user').value='';
-    document.getElementById('r-pass').value='';
-    document.getElementById('r-pass2').value='';
-  }catch(e){
-    showAlert('auth-alert',e.code==='auth/email-already-in-use'?'An account with this email already exists.':e.message);
-  }
+    ['r-email','r-user','r-pass','r-pass2'].forEach(id=>{document.getElementById(id).value='';});
+  }catch(e){showAlert('auth-alert',e.code==='auth/email-already-in-use'?'An account with this email already exists.':e.message);}
 }
-
 async function doLogin(){
   const email=(document.getElementById('l-email').value||'').trim().toLowerCase();
   const p=document.getElementById('l-pass').value;
@@ -475,11 +452,8 @@ async function doLogin(){
       showAlert('auth-alert','Please verify your email before logging in. <button class="btn-link" onclick="resendVerificationToEmail(\''+email+'\',\''+p+'\')">Resend verification email</button>');
       return;
     }
-  }catch(e){
-    showAlert('auth-alert',['auth/user-not-found','auth/wrong-password','auth/invalid-credential'].includes(e.code)?'Invalid email or password.':e.message);
-  }
+  }catch(e){showAlert('auth-alert',['auth/user-not-found','auth/wrong-password','auth/invalid-credential'].includes(e.code)?'Invalid email or password.':e.message);}
 }
-
 async function doForgotPassword(){
   const email=(document.getElementById('f-email').value||'').trim().toLowerCase();
   if(!email){showAlert('auth-alert','Enter your email address.');return}
@@ -488,19 +462,12 @@ async function doForgotPassword(){
     await auth.sendPasswordResetEmail(email);
     showAlert('auth-alert',`Password reset email sent to <b>${email}</b>. Check your inbox.`,'ok');
     document.getElementById('f-email').value='';
-  }catch(e){
-    showAlert('auth-alert',e.code==='auth/user-not-found'?'No account found with that email.':e.message);
-  }
+  }catch(e){showAlert('auth-alert',e.code==='auth/user-not-found'?'No account found with that email.':e.message);}
 }
-
 async function resendVerification(){
   const user=auth.currentUser;
-  if(user&&!user.emailVerified){
-    await user.sendEmailVerification();
-    alert('Verification email resent!');
-  }
+  if(user&&!user.emailVerified){await user.sendEmailVerification();alert('Verification email resent!');}
 }
-
 async function resendVerificationToEmail(email,pass){
   try{
     const cred=await auth.signInWithEmailAndPassword(email,pass);
@@ -509,7 +476,6 @@ async function resendVerificationToEmail(email,pass){
     showAlert('auth-alert','Verification email resent! Check your inbox.','ok');
   }catch(e){showAlert('auth-alert','Could not resend: '+e.message);}
 }
-
 async function changePassword(){
   const np=document.getElementById('s-newpass').value;
   const np2=document.getElementById('s-newpass2').value;
@@ -520,43 +486,31 @@ async function changePassword(){
   try{
     await auth.currentUser.updatePassword(np);
     msg.style.color='var(--green)';msg.textContent='Password updated!';
-    document.getElementById('s-newpass').value='';
-    document.getElementById('s-newpass2').value='';
+    document.getElementById('s-newpass').value='';document.getElementById('s-newpass2').value='';
     setTimeout(()=>{msg.textContent=''},3000);
-  }catch(e){
-    if(e.code==='auth/requires-recent-login'){
-      msg.style.color='#f87171';msg.textContent='Session expired — log out and back in first.';
-    }else{msg.style.color='#f87171';msg.textContent=e.message;}
-  }
+  }catch(e){msg.style.color='#f87171';msg.textContent=e.code==='auth/requires-recent-login'?'Session expired — log out and back in first.':e.message;}
 }
-
 function doLogout(){auth.signOut();}
-
 auth.onAuthStateChanged(async fbUser=>{
   if(fbUser){
     if(!fbUser.emailVerified){
       document.getElementById('verify-banner').style.display='flex';
-      CU=null;updateNav();
-      goPage('auth','login');
-      return;
+      CU=null;updateNav();goPage('auth','login');return;
     }
     document.getElementById('verify-banner').style.display='none';
     const doc=await db.collection('users').doc(fbUser.uid).get();
     if(doc.exists){
-      CU={id:fbUser.uid,...doc.data()};
-      updateNav();
+      CU={id:fbUser.uid,...doc.data()};updateNav();
       const active=document.querySelector('.page.active');
-      if(!active||['page-auth','page-home'].includes(active.id)) goPage('feed');
+      if(!active||['page-auth','page-home'].includes(active.id))goPage('feed');
     }
   }else{
     document.getElementById('verify-banner').style.display='none';
     CU=null;updateNav();
     const active=document.querySelector('.page.active');
-    if(!active||!['page-leaderboard','page-about','page-home'].includes(active?.id)) goPage('home');
+    if(!active||!['page-leaderboard','page-about','page-home'].includes(active?.id))goPage('home');
   }
 });
-
-// ══ FEED ══════════════════════════════════════════════
 function renderComposer(){
   if(!CU)return'';
   return`<div class="composer">
@@ -573,7 +527,6 @@ function renderComposer(){
     </div>
   </div>`;
 }
-
 async function loadFeed(){
   document.getElementById('composer-wrap').innerHTML=renderComposer();
   const el=document.getElementById('feed-list');
@@ -583,7 +536,6 @@ async function loadFeed(){
     el.innerHTML=snap.empty?'<div class="empty">No posts yet — be the first!</div>':snap.docs.map(d=>renderPost({id:d.id,...d.data()})).join('');
   }catch(e){el.innerHTML=`<div class="empty">Error: ${esc(e.message)}</div>`;}
 }
-
 function renderPost(p){
   const liked=CU&&(p.likes||[]).includes(CU.id);
   const canDelete=CU&&(CU.id===p.userId||isAdmin());
@@ -612,7 +564,6 @@ function renderPost(p){
     </div>
   </div>`;
 }
-
 async function submitPost(){
   if(!CU)return;
   const content=(document.getElementById('post-inp')?.value||'').trim();
@@ -624,7 +575,6 @@ async function submitPost(){
     attachedTrack=null;loadFeed();
   }catch(e){if(btn)btn.disabled=false;alert('Post failed: '+e.message);}
 }
-
 async function toggleLike(postId,wasLiked){
   if(!CU)return;
   const ref=db.collection('posts').doc(postId);
@@ -633,13 +583,11 @@ async function toggleLike(postId,wasLiked){
   const el=document.getElementById('post-'+postId);
   if(el)el.outerHTML=renderPost({id:snap.id,...snap.data()});
 }
-
 async function deletePost(postId){
   if(!confirm('Delete this post?'))return;
   await db.collection('posts').doc(postId).delete();
   document.getElementById('post-'+postId)?.remove();
 }
-
 async function attachNowPlaying(){
   const tok=spTok();
   if(!tok){alert('Spotify token expired — re-link in Settings.');return}
@@ -657,8 +605,6 @@ async function attachNowPlaying(){
     }else alert('Nothing playing right now.');
   }else alert('Could not fetch now playing (status '+r.status+')');
 }
-
-// ══ PROFILE ═══════════════════════════════════════════
 async function renderProfile(){
   const el=document.getElementById('profile-wrap');
   el.innerHTML='<div class="loading">Loading…</div>';
@@ -681,7 +627,6 @@ async function renderProfile(){
     renderProfileHTML();
   }catch(e){el.innerHTML=`<div class="empty">Error: ${esc(e.message)}</div>`;}
 }
-
 function renderProfileHTML(){
   const {user,posts,tops}=profData;
   const isOwn=CU?.id===user.id;
@@ -709,30 +654,28 @@ function renderProfileHTML(){
     <div class="tabs" id="prof-tabs">
       <div class="tab ${profTab==='posts'?'active':''}" onclick="switchProfTab('posts')">Posts (${posts.length})</div>
       ${hasTops?`
-        <div class="tab ${profTab==='tracks'?'active':''}"  onclick="switchProfTab('tracks')">Tracks</div>
+        <div class="tab ${profTab==='tracks'?'active':''}" onclick="switchProfTab('tracks')">Tracks</div>
         <div class="tab ${profTab==='artists'?'active':''}" onclick="switchProfTab('artists')">Artists</div>
-        <div class="tab ${profTab==='genres'?'active':''}"  onclick="switchProfTab('genres')">Genres</div>
-        <div class="tab ${profTab==='recent'?'active':''}"  onclick="switchProfTab('recent')">Recent</div>
+        <div class="tab ${profTab==='genres'?'active':''}" onclick="switchProfTab('genres')">Genres</div>
+        <div class="tab ${profTab==='recent'?'active':''}" onclick="switchProfTab('recent')">Recent</div>
       `:''}
     </div>
     <div id="prof-tab-body"></div>`;
   renderProfTab();
 }
-
 function switchProfTab(tab){
   profTab=tab;
   document.querySelectorAll('#prof-tabs .tab').forEach(t=>{
     t.classList.toggle('active',
-      (tab==='posts'  &&t.textContent.startsWith('Posts'))||
-      (tab==='tracks' &&t.textContent==='Tracks')||
+      (tab==='posts'&&t.textContent.startsWith('Posts'))||
+      (tab==='tracks'&&t.textContent==='Tracks')||
       (tab==='artists'&&t.textContent==='Artists')||
-      (tab==='genres' &&t.textContent==='Genres')||
-      (tab==='recent' &&t.textContent==='Recent')
+      (tab==='genres'&&t.textContent==='Genres')||
+      (tab==='recent'&&t.textContent==='Recent')
     );
   });
   renderProfTab();
 }
-
 function renderProfTab(){
   const el=document.getElementById('prof-tab-body');if(!el)return;
   const {posts,tops}=profData;
@@ -773,7 +716,6 @@ function renderProfTab(){
       </div>`).join('')}</div>`;
   }
 }
-
 async function profileSync(){
   const btn=document.getElementById('prof-sync-btn');
   const lbl=document.getElementById('prof-sync-lbl');
@@ -796,7 +738,36 @@ async function profileSync(){
     if(lbl){lbl.style.color='#f87171';lbl.textContent='Failed: '+e.message;}
   }
 }
-
+// ══ DISCOVER ══════════════════════════════════════════
+async function loadDiscover(){
+  const el=document.getElementById('all-users');
+  el.innerHTML='<div class="loading">Loading…</div>';
+  try{
+    const snap=await db.collection('users').get();
+    renderUserGrid(snap.docs.map(d=>({id:d.id,...d.data()})),el);
+  }catch(e){el.innerHTML=`<div class="empty">Error: ${esc(e.message)}</div>`;}
+}
+async function searchUsers(){
+  const q=(document.getElementById('search-inp').value||'').trim().toLowerCase();
+  const el=document.getElementById('search-results');
+  if(!q){el.innerHTML='';return;}
+  el.innerHTML='<div class="loading">Searching…</div>';
+  try{
+    const snap=await db.collection('users').where('username','>=',q).where('username','<=',q+'\uf8ff').limit(10).get();
+    if(snap.empty){el.innerHTML='<div class="empty">No users found.</div>';return;}
+    renderUserGrid(snap.docs.map(d=>({id:d.id,...d.data()})),el);
+  }catch(e){el.innerHTML=`<div class="empty">Error: ${esc(e.message)}</div>`;}
+}
+function renderUserGrid(users,el){
+  if(!users.length){el.innerHTML='<div class="empty">No users found.</div>';return;}
+  el.innerHTML=`<div class="ugrid">${users.map(u=>`
+    <div class="uc" onclick="goPage('profile','${u.id}')">
+      <img src="${av(u)}" alt="" onerror="this.src='${genAv(u.username)}'">
+      <div class="uc-name">@${esc(u.username)}</div>
+      <div class="uc-sub">${u.spotifyLinked?'<span style="color:var(--green)">Spotify</span>':u.country||'—'}</div>
+      ${u.bio?`<div style="font-size:.68rem;color:var(--sub);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(u.bio)}</div>`:''}
+    </div>`).join('')}</div>`;
+}
 // ══ LEADERBOARD ═══════════════════════════════════════
 async function loadLeaderboard(){
   document.getElementById('lb-content').innerHTML='<div class="loading">Loading…</div>';
@@ -807,13 +778,11 @@ async function loadLeaderboard(){
     renderLeaderboard();
   }catch(e){document.getElementById('lb-content').innerHTML=`<div class="empty">Error: ${esc(e.message)}</div>`;}
 }
-
 function switchLbTab(tab){
   lbTab=tab;
   document.querySelectorAll('#lb-tabs .tab').forEach((t,i)=>t.classList.toggle('active',['tracks','artists','users'][i]===tab));
   renderLeaderboard();
 }
-
 function renderLeaderboard(){
   const el=document.getElementById('lb-content');
   if(lbTab==='tracks'||lbTab==='artists'){
@@ -841,7 +810,6 @@ function renderLeaderboard(){
       </div>`).join('')}</div>`;
   }
 }
-
 // ══ ABOUT ═════════════════════════════════════════════
 function renderAbout(){
   document.getElementById('about-content').innerHTML=`
@@ -875,19 +843,21 @@ function renderAbout(){
       </div>
     </div>
     <footer>
-      <svg width="72" height="72" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:8px">
-        <rect width="72" height="72" rx="16" fill="url(#jbg2)"/>
-        <defs><linearGradient id="jbg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3dd6b0"/><stop offset="100%" stop-color="#1a9e82"/></linearGradient></defs>
-        <rect x="18" y="36" width="10" height="22" rx="3" fill="white"/>
-        <rect x="31" y="26" width="10" height="32" rx="3" fill="white"/>
-        <rect x="44" y="18" width="10" height="40" rx="3" fill="white"/>
+      <svg width="72" height="72" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:8px">
+        <defs>
+          <linearGradient id="ft2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3dd6b0"/><stop offset="100%" stop-color="#1a9e82"/></linearGradient>
+          <linearGradient id="fw2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8B5E3C"/><stop offset="50%" stop-color="#6B3F1F"/><stop offset="100%" stop-color="#8B5E3C"/></linearGradient>
+        </defs>
+        <rect width="76" height="76" rx="14" fill="url(#fw2)"/>
+        <rect x="6" y="6" width="64" height="64" rx="10" fill="url(#ft2)"/>
+        <path d="M14,68 L14,36 Q14,10 38,8 Q62,10 62,36 L62,68 Z" fill="white"/>
+        <path d="M22,35 Q22,16 38,14 Q54,16 54,35 L54,40 L22,40 Z" fill="url(#ft2)"/>
       </svg>
       <div class="foot-logo">JukeBox</div>
       <p>A simple student project for sharing music reviews and climbing the community leaderboards.</p>
       <p>© 2026 Jukebox Project. Created for WRT 307.</p>
     </footer>`;
 }
-
 // ══ SETTINGS ══════════════════════════════════════════
 function renderSettings(){
   if(!CU){goPage('auth');return}
@@ -926,7 +896,6 @@ function renderSettings(){
     </div>`:'';
   }
 }
-
 async function saveProfile(){
   if(!CU)return;
   CU.bio=document.getElementById('s-bio').value.trim();
@@ -934,7 +903,6 @@ async function saveProfile(){
   const m=document.getElementById('s-save-msg');
   m.textContent='Saved!';setTimeout(()=>{if(m)m.textContent=''},2500);
 }
-
 // ══ ADMIN ═════════════════════════════════════════════
 async function loadAdminPanel(){
   const el=document.getElementById('admin-user-list');if(!el)return;
@@ -958,7 +926,6 @@ async function loadAdminPanel(){
         </div>`).join('');
   }catch(e){el.innerHTML=`<div class="alert alert-err">Error: ${esc(e.message)}</div>`;}
 }
-
 async function adminDeleteUser(uid,username){
   if(!isAdmin())return;
   if(!confirm(`Remove @${username} and all their posts?`))return;
@@ -969,11 +936,9 @@ async function adminDeleteUser(uid,username){
   batch.delete(db.collection('tops').doc(uid));
   await batch.commit();
   await db.collection('usernames').doc(username).delete();
-  // Also delete from Firebase Auth
-  alert(`@${username} removed from database. Note: their Firebase Auth account may need manual removal from the Firebase console.`);
+  alert(`@${username} removed.`);
   loadAdminPanel();
 }
-
 // ══ SPOTIFY ═══════════════════════════════════════════
 const spTok=()=>{
   if(!CU)return null;
@@ -981,7 +946,6 @@ const spTok=()=>{
   const e=parseInt(localStorage.getItem('sp_exp_'+CU.id)||'0');
   return(t&&Date.now()<e)?t:null;
 };
-
 async function startSpLink(){
   if(!CU)return;
   localStorage.setItem('sp_luid',CU.id);
@@ -996,7 +960,6 @@ async function startSpLink(){
   u.searchParams.set('scope','user-top-read user-read-recently-played user-read-private user-read-currently-playing');
   window.location=u.toString();
 }
-
 async function handleSpCallback(code){
   const v=localStorage.getItem('sp_ver');
   const luid=localStorage.getItem('sp_luid');
@@ -1018,7 +981,6 @@ async function handleSpCallback(code){
     await syncSpotifyForUser(luid,d.access_token);
   }catch(e){alert('Spotify link error: '+e.message);}
 }
-
 async function syncSpotify(){
   const tok=spTok();
   const btn=document.getElementById('sync-btn');
@@ -1037,7 +999,6 @@ async function syncSpotify(){
     if(btn){btn.disabled=false;btn.textContent='↻ Sync Stats';}
   }
 }
-
 async function syncSpotifyForUser(uid,tok,statusCb){
   const status=statusCb||(s=>console.log(s));
   const headers={Authorization:'Bearer '+tok};
@@ -1070,7 +1031,6 @@ async function syncSpotifyForUser(uid,tok,statusCb){
     updatedAt:new Date().toISOString()
   });
 }
-
 async function unlinkSpotify(){
   if(!CU||!confirm('Unlink Spotify?'))return;
   const updates={spotifyLinked:false,spotifyId:'',spotifyDisplayName:'',spotifyAvatar:'',updatedAt:new Date().toISOString()};
@@ -1081,7 +1041,6 @@ async function unlinkSpotify(){
   localStorage.removeItem('sp_exp_'+CU.id);
   updateNav();renderSettings();
 }
-
 // ══ INIT ══════════════════════════════════════════════
 window.addEventListener('load',async()=>{
   const params=new URLSearchParams(window.location.search);

@@ -9,29 +9,24 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#0a0a0a;--card:#181818;--card2:#222;--border:#2a2a2a;--green:#39FF14;--text:#fff;--muted:#888;--sub:#555}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-
-/* NAV */
 nav{position:sticky;top:0;z-index:200;background:#0a0a0aee;backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:56px}
 .nav-logo{font-weight:900;font-size:1.1rem;color:var(--green);cursor:pointer;letter-spacing:1px}
 .nav-center{display:flex;gap:0}
 .nav-right{display:flex;align-items:center;gap:8px}
-.nb{padding:6px 16px;border-radius:0;border:none;background:transparent;color:var(--muted);font-size:.78rem;font-weight:500;cursor:pointer;transition:all .15s;font-family:inherit;letter-spacing:.3px}
+.nb{padding:6px 16px;border:none;background:transparent;color:var(--muted);font-size:.78rem;font-weight:500;cursor:pointer;transition:all .15s;font-family:inherit;letter-spacing:.3px}
 .nb:hover{color:var(--text)}.nb.active{color:var(--text);border-bottom:2px solid var(--green)}
 .nb-outline{border:1px solid var(--border);border-radius:4px;color:var(--text);padding:6px 16px}
 .nb-outline:hover{border-color:var(--green);color:var(--green)}
 .nb-green{background:var(--green);color:#000;font-weight:700;border-radius:4px;padding:6px 18px}
 .nb-green:hover{background:#2de010}
 .nav-av{width:28px;height:28px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);cursor:pointer}
-
-/* PAGES */
 .page{display:none}.page.active{display:block}
 .page-inner{max-width:700px;margin:0 auto;padding:32px 16px 80px}
-
 /* HERO */
 #page-home{position:relative;min-height:100vh}
 .hero{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 24px;position:relative;overflow:hidden}
-  .hero::before{content:'';position:absolute;inset:0;background:url('hero.jpg') center center/cover no-repeat;z-index:0}
-  .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,.45) 0%, rgba(0,0,0,.6) 60%, #0a0a0a 100%);z-index:0}
+.hero::before{content:'';position:absolute;inset:0;background:url('hero.jpg') center center/cover no-repeat;z-index:0}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.45) 0%,rgba(0,0,0,.6) 60%,#0a0a0a 100%);z-index:0}
 .hero-content{position:relative;z-index:1}
 .hero h1{font-size:clamp(3rem,10vw,7rem);font-weight:900;color:var(--green);letter-spacing:4px;line-height:1;margin-bottom:24px;text-shadow:0 0 40px #39FF1460}
 .hero-sub{font-size:clamp(.85rem,2vw,1rem);font-weight:600;color:var(--text);max-width:520px;line-height:1.7;margin-bottom:36px;text-transform:uppercase;letter-spacing:.5px;border:1px solid #39FF1440;padding:12px 20px;background:#39FF1408}
@@ -40,40 +35,29 @@ nav{position:sticky;top:0;z-index:200;background:#0a0a0aee;backdrop-filter:blur(
 .hero-btn-primary:hover{background:#2de010;transform:translateY(-1px)}
 .hero-btn-secondary{background:transparent;color:var(--text);font-weight:600;font-size:.9rem;padding:13px 36px;border:1px solid #555;border-radius:3px;cursor:pointer;letter-spacing:1px;text-transform:uppercase;transition:all .2s}
 .hero-btn-secondary:hover{border-color:var(--text)}
-
-/* SECTION HEADERS */
 .sec-label{font-size:.68rem;font-weight:700;color:var(--green);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
-.sec-title{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:900;color:var(--text);margin-bottom:6px;letter-spacing:-0.5px}
+.sec-title{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:900;color:var(--text);margin-bottom:6px}
 .sec-sub{font-size:.83rem;color:var(--muted);margin-bottom:24px}
-
-/* CARDS */
-.card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:18px;margin-bottom:10px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:18px;margin-bottom:12px}
 .card-flat{background:transparent;border:1px solid var(--border);border-radius:6px;padding:18px;margin-bottom:10px}
-
-/* FORMS */
 .field{margin-bottom:12px}.field label{display:block;font-size:.72rem;color:var(--muted);margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px}
 .inp{width:100%;padding:10px 14px;background:#111;border:1px solid var(--border);border-radius:4px;color:var(--text);font-size:.88rem;outline:none;transition:border-color .2s;font-family:inherit}
 .inp:focus{border-color:var(--green)}textarea.inp{resize:none}
-
-/* BUTTONS */
 .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border:none;border-radius:4px;font-size:.82rem;font-weight:700;cursor:pointer;transition:all .15s;font-family:inherit;letter-spacing:.3px;text-transform:uppercase}
 .btn-green{background:var(--green);color:#000}.btn-green:hover{background:#2de010}
 .btn-ghost{background:transparent;color:var(--green);border:1px solid var(--green)}.btn-ghost:hover{background:#39FF1410}
 .btn-dark{background:#222;color:var(--text);border:1px solid var(--border)}.btn-dark:hover{border-color:var(--green)}
-.btn-red{background:#2a0a0a;color:#f87171;border:1px solid #5a1f1f}.btn-sm{padding:5px 13px;font-size:.72rem}.btn:disabled{opacity:.35;cursor:default}
-
-/* ALERTS */
+.btn-red{background:#2a0a0a;color:#f87171;border:1px solid #5a1f1f}
+.btn-link{background:none;border:none;color:var(--green);font-size:.78rem;cursor:pointer;font-family:inherit;text-decoration:underline;padding:0}
+.btn-sm{padding:5px 13px;font-size:.72rem}.btn:disabled{opacity:.35;cursor:default}
 .alert{padding:10px 14px;border-radius:4px;font-size:.8rem;margin-bottom:10px}
 .alert-err{background:#1f0a0a;border:1px solid #5a1f1f;color:#f87171}
 .alert-ok{background:#0a1f0a;border:1px solid #1a5a1a;color:var(--green)}
 .alert-warn{background:#1a1200;border:1px solid #4a3500;color:#fbbf24}
-
-/* TABS */
+.alert-info{background:#0a0a1f;border:1px solid #1a1a5a;color:#818cf8}
 .tabs{display:flex;gap:4px;margin-bottom:18px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding-bottom:0}
 .tab{padding:8px 16px;border-radius:0;font-size:.76rem;font-weight:600;cursor:pointer;border:none;background:transparent;color:var(--muted);transition:all .15s;border-bottom:2px solid transparent;margin-bottom:-1px;text-transform:uppercase;letter-spacing:.5px}
 .tab:hover{color:var(--text)}.tab.active{color:var(--green);border-bottom-color:var(--green)}
-
-/* POSTS */
 .post{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:16px;margin-bottom:10px;transition:border-color .2s}
 .post:hover{border-color:#3a3a3a}
 .ph{display:flex;align-items:center;gap:10px;margin-bottom:10px}
@@ -91,10 +75,8 @@ nav{position:sticky;top:0;z-index:200;background:#0a0a0aee;backdrop-filter:blur(
 .pfooter{display:flex;align-items:center;gap:10px}
 .like-btn{display:flex;align-items:center;gap:5px;padding:4px 10px;border-radius:3px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:.74rem;cursor:pointer;transition:all .15s;font-weight:600}
 .like-btn:hover{color:#e74c3c;border-color:#e74c3c}.like-btn.liked{color:#e74c3c;border-color:#e74c3c}
-.del-btn{margin-left:auto;background:none;border:none;color:var(--sub);cursor:pointer;font-size:.73rem;padding:4px 8px;border-radius:3px;font-family:inherit;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+.del-btn{margin-left:auto;background:none;border:none;color:var(--sub);cursor:pointer;font-size:.73rem;padding:4px 8px;border-radius:3px;font-family:inherit;font-weight:600;text-transform:uppercase}
 .del-btn:hover{color:#f87171;background:#1f0a0a}
-
-/* COMPOSER */
 .composer{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:16px;margin-bottom:18px}
 .cmp-row{display:flex;align-items:flex-start;gap:10px}
 .cmp-av{width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1.5px solid var(--border)}
@@ -106,21 +88,17 @@ nav{position:sticky;top:0;z-index:200;background:#0a0a0aee;backdrop-filter:blur(
 .tp-name{font-weight:700;font-size:.78rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tp-art{font-size:.69rem;color:var(--muted);margin-top:1px}
 .tp-rm{background:none;border:none;color:var(--muted);cursor:pointer;font-size:.9rem;flex-shrink:0}.tp-rm:hover{color:#f87171}
-
-/* PROFILE */
-.prof-banner{height:100px;background:linear-gradient(135deg,#0f2a0f,#0a0a0a,#0f1a2a);border-radius:6px 6px 0 0;border:1px solid var(--border);border-bottom:none;position:relative}
-.prof-card-wrap{background:var(--card);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-bottom:16px}
-.prof-body{padding:0 20px 20px}
-.prof-bigav{width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--bg);margin-top:-40px;margin-bottom:10px;display:block;background:#222}
-.prof-name{font-size:1.3rem;font-weight:900;color:var(--text);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.prof-card-wrap{background:var(--card);border:1px solid var(--border);border-radius:6px;margin-bottom:16px}
+.prof-body{padding:24px;display:flex;gap:16px;align-items:flex-start}
+.prof-bigav{width:72px;height:72px;min-width:72px;min-height:72px;border-radius:50%;object-fit:cover;border:2px solid var(--green);flex-shrink:0;background:#222;display:block}
+.prof-info{flex:1;min-width:0}
+.prof-name{font-size:1.2rem;font-weight:900;color:var(--text);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .prof-sub{font-size:.75rem;color:var(--sub);margin-top:3px}
 .prof-bio{font-size:.83rem;color:#bbb;margin-top:8px;line-height:1.55}
 .pills{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
 .pill{background:#222;border:1px solid var(--border);border-radius:3px;padding:3px 10px;font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
 .pill span{color:var(--green);font-weight:700}
 .badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:3px;font-size:.63rem;font-weight:700;background:#0a2a0a;color:var(--green);border:1px solid #1a5a1a;letter-spacing:.5px}
-
-/* STATS LIST */
 .li{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}.li:last-child{border-bottom:none}
 .li-rank{font-size:.82rem;font-weight:800;color:var(--sub);width:20px;text-align:center;flex-shrink:0}.li-rank.top{color:var(--green)}
 .li-img{width:44px;height:44px;border-radius:4px;object-fit:cover;flex-shrink:0}.li-img.r{border-radius:50%}
@@ -130,8 +108,6 @@ nav{position:sticky;top:0;z-index:200;background:#0a0a0aee;backdrop-filter:blur(
 .li-bar{width:60px;flex-shrink:0}
 .bar-bg{background:#222;border-radius:2px;height:3px}.bar-f{background:var(--green);border-radius:2px;height:3px}
 .bar-lbl{font-size:.62rem;color:var(--sub);text-align:right;margin-top:3px}
-
-/* LEADERBOARD */
 .lb-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}.lb-item:last-child{border-bottom:none}
 .lb-rank{font-size:1rem;font-weight:900;width:28px;text-align:center;flex-shrink:0;color:var(--sub)}
 .lb-rank.gold{color:#f1c40f}.lb-rank.silver{color:#94a3b8}.lb-rank.bronze{color:#c17d3c}
@@ -147,8 +123,10 @@ nav{position:sticky;top:0;z-index:200;background:#0a0a0aee;backdrop-filter:blur(
 .uc img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--border);margin:0 auto 8px;display:block}
 .uc-name{font-weight:700;font-size:.8rem;color:var(--green);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .uc-sub{font-size:.67rem;color:var(--sub);margin-top:2px}
-
-/* ABOUT */
+.stitle{font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--green);margin-bottom:12px;font-weight:700}
+.loading{text-align:center;color:var(--sub);padding:30px 0;font-size:.82rem}
+.empty{text-align:center;color:var(--sub);padding:38px 0;font-size:.82rem;line-height:1.7}
+.row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .about-step{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
 .about-num{width:36px;height:36px;border-radius:3px;background:var(--green);color:#000;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;font-weight:900}
 .about-step-title{font-weight:800;font-size:.88rem;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
@@ -160,25 +138,24 @@ nav{position:sticky;top:0;z-index:200;background:#0a0a0aee;backdrop-filter:blur(
 .db-row code{font-size:.72rem;color:var(--green);font-family:monospace;flex-shrink:0;width:155px;padding-top:2px}
 .db-row span{font-size:.77rem;color:var(--muted);line-height:1.55}
 .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
-.feat-item{display:flex;align-items:center;gap:8px;font-size:.8rem;color:#ccc;text-transform:uppercase;font-size:.72rem;letter-spacing:.3px}
+.feat-item{display:flex;align-items:center;gap:8px;font-size:.72rem;color:#ccc;text-transform:uppercase;letter-spacing:.3px}
 .feat-item span{color:var(--green);font-weight:900;font-size:.8rem}
 .auth-card{background:#111;border:1px solid var(--border);border-radius:4px;padding:12px 14px;margin-bottom:8px}
 .auth-card-title{font-weight:800;font-size:.82rem;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;color:var(--green)}
 .auth-card p{font-size:.77rem;color:var(--muted);line-height:1.6}
-
-/* MISC */
-.stitle{font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--green);margin-bottom:12px;font-weight:700}
-.loading{text-align:center;color:var(--sub);padding:30px 0;font-size:.82rem}
-.empty{text-align:center;color:var(--sub);padding:38px 0;font-size:.82rem;line-height:1.7}
-.row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-
-/* FOOTER */
 footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;margin-top:40px}
 footer .foot-logo{font-size:1.1rem;font-weight:900;color:var(--green);letter-spacing:1px;margin-bottom:6px}
 footer p{font-size:.74rem;color:var(--sub);margin-top:4px}
+/* VERIFY BANNER */
+.verify-banner{background:#1a1200;border-bottom:1px solid #4a3500;padding:10px 20px;text-align:center;font-size:.8rem;color:#fbbf24;display:flex;align-items:center;justify-content:center;gap:10px}
 </style>
 </head>
 <body>
+
+<div id="verify-banner" style="display:none" class="verify-banner">
+  ⚠️ Please verify your @g.syr.edu email to access all features.
+  <button class="btn-link" onclick="resendVerification()">Resend email</button>
+</div>
 
 <nav>
   <div class="nav-logo" onclick="goPage('home')">JUKEBOX</div>
@@ -207,8 +184,8 @@ footer p{font-size:.74rem;color:var(--sub);margin-top:4px}
   </div>
   <footer>
     <svg width="72" height="72" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:8px">
-      <rect width="72" height="72" rx="16" fill="url(#jbgrad)"/>
-      <defs><linearGradient id="jbgrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3dd6b0"/><stop offset="100%" stop-color="#1a9e82"/></linearGradient></defs>
+      <rect width="72" height="72" rx="16" fill="url(#jbg)"/>
+      <defs><linearGradient id="jbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3dd6b0"/><stop offset="100%" stop-color="#1a9e82"/></linearGradient></defs>
       <rect x="18" y="36" width="10" height="22" rx="3" fill="white"/>
       <rect x="31" y="26" width="10" height="32" rx="3" fill="white"/>
       <rect x="44" y="18" width="10" height="40" rx="3" fill="white"/>
@@ -222,22 +199,38 @@ footer p{font-size:.74rem;color:var(--sub);margin-top:4px}
 <!-- AUTH -->
 <div class="page" id="page-auth">
   <div class="page-inner">
-    <div class="card" style="max-width:400px;margin:40px auto">
+    <div class="card" style="max-width:420px;margin:40px auto">
       <div class="tabs" id="auth-tabs" style="margin-bottom:18px">
         <div class="tab active" onclick="switchAuthTab('login')">Login</div>
         <div class="tab" onclick="switchAuthTab('register')">Create Account</div>
+        <div class="tab" onclick="switchAuthTab('forgot')">Forgot Password</div>
       </div>
       <div id="auth-alert"></div>
+
+      <!-- LOGIN -->
       <div id="form-login">
-        <div class="field"><label>Username</label><input class="inp" id="l-user" placeholder="your username" autocomplete="username"></div>
+        <div class="field"><label>SU Email</label><input class="inp" id="l-email" placeholder="netid@g.syr.edu" type="email" autocomplete="email"></div>
         <div class="field"><label>Password</label><input class="inp" type="password" id="l-pass" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()"></div>
-        <button class="btn btn-green" style="width:100%;justify-content:center" onclick="doLogin()">Login</button>
+        <button class="btn btn-green" style="width:100%;justify-content:center;margin-bottom:10px" onclick="doLogin()">Log In</button>
+        <div style="text-align:center"><button class="btn-link" onclick="switchAuthTab('forgot')">Forgot your password?</button></div>
       </div>
+
+      <!-- REGISTER -->
       <div id="form-register" style="display:none">
-        <div class="field"><label>Username</label><input class="inp" id="r-user" placeholder="letters, numbers, _" autocomplete="username"></div>
+        <div class="alert alert-info" style="margin-bottom:14px">Only <b>@g.syr.edu</b> email addresses are allowed.</div>
+        <div class="field"><label>SU Email</label><input class="inp" id="r-email" placeholder="netid@g.syr.edu" type="email" autocomplete="email"></div>
+        <div class="field"><label>Username <small style="color:var(--sub);text-transform:none">(letters, numbers, _)</small></label><input class="inp" id="r-user" placeholder="choose a username" autocomplete="username"></div>
         <div class="field"><label>Password</label><input class="inp" type="password" id="r-pass" placeholder="at least 6 characters" autocomplete="new-password"></div>
         <div class="field"><label>Confirm Password</label><input class="inp" type="password" id="r-pass2" placeholder="••••••••" autocomplete="new-password" onkeydown="if(event.key==='Enter')doRegister()"></div>
         <button class="btn btn-green" style="width:100%;justify-content:center" onclick="doRegister()">Create Account</button>
+      </div>
+
+      <!-- FORGOT PASSWORD -->
+      <div id="form-forgot" style="display:none">
+        <p style="font-size:.82rem;color:var(--muted);margin-bottom:14px;line-height:1.6">Enter your <b style="color:var(--text)">@g.syr.edu</b> email and we'll send you a password reset link.</p>
+        <div class="field"><label>SU Email</label><input class="inp" id="f-email" placeholder="netid@g.syr.edu" type="email" autocomplete="email" onkeydown="if(event.key==='Enter')doForgotPassword()"></div>
+        <button class="btn btn-green" style="width:100%;justify-content:center;margin-bottom:10px" onclick="doForgotPassword()">Send Reset Email</button>
+        <div style="text-align:center"><button class="btn-link" onclick="switchAuthTab('login')">Back to login</button></div>
       </div>
     </div>
   </div>
@@ -257,7 +250,7 @@ footer p{font-size:.74rem;color:var(--sub);margin-top:4px}
 
 <!-- PROFILE -->
 <div class="page" id="page-profile">
-  <div class="page-inner" style="padding-top:40px">
+  <div class="page-inner" style="padding-top:32px">
     <div id="profile-wrap"><div class="loading">Loading…</div></div>
   </div>
 </div>
@@ -268,7 +261,7 @@ footer p{font-size:.74rem;color:var(--sub);margin-top:4px}
     <div style="margin-bottom:24px">
       <div class="sec-label">Rankings</div>
       <div class="sec-title">Leaderboard</div>
-      <div class="sec-sub">Meet our most active listeners and top contributors.</div>
+      <div class="sec-sub">Most listened tracks and artists across all users.</div>
     </div>
     <div class="tabs" id="lb-tabs">
       <div class="tab active" onclick="switchLbTab('tracks')">Top Tracks</div>
@@ -300,6 +293,15 @@ footer p{font-size:.74rem;color:var(--sub);margin-top:4px}
       </div>
     </div>
     <div class="card">
+      <div class="stitle">Password</div>
+      <div class="field"><label>New Password</label><input class="inp" type="password" id="s-newpass" placeholder="at least 6 characters"></div>
+      <div class="field"><label>Confirm New Password</label><input class="inp" type="password" id="s-newpass2" placeholder="••••••••"></div>
+      <div class="row">
+        <button class="btn btn-dark btn-sm" onclick="changePassword()">Update Password</button>
+        <span id="s-pass-msg" style="font-size:.76rem"></span>
+      </div>
+    </div>
+    <div class="card">
       <div class="stitle">Spotify</div>
       <div id="sp-settings-body"><div class="loading">Loading…</div></div>
     </div>
@@ -318,6 +320,9 @@ footer p{font-size:.74rem;color:var(--sub);margin-top:4px}
 // ══ CONFIG ════════════════════════════════════════════
 const SPOTIFY_CLIENT_ID = "ce9454abac534097b74020fd1567f5a4";
 const ADMINS = ['admin1'];
+const ALLOWED_DOMAIN = 'g.syr.edu';
+const REDIRECT_URI = 'https://carider.github.io/Jukebox/';
+
 const firebaseConfig = {
   apiKey:"AIzaSyDnLhMsTyxqUJQWzHB1CrJHwZuADiiba34",
   authDomain:"spotstats-1d306.firebaseapp.com",
@@ -326,24 +331,28 @@ const firebaseConfig = {
   messagingSenderId:"434659332898",
   appId:"1:434659332898:web:fa863e2b3a85b5c9258b7b"
 };
+
 firebase.initializeApp(firebaseConfig);
-const auth=firebase.auth(), db=firebase.firestore(), FV=firebase.firestore.FieldValue;
+const auth = firebase.auth();
+const db   = firebase.firestore();
+const FV   = firebase.firestore.FieldValue;
 
 // ══ PKCE ══════════════════════════════════════════════
-const rand=n=>{const a=new Uint8Array(n);crypto.getRandomValues(a);return[...a].map(b=>b.toString(16).padStart(2,'0')).join('')};
-const sha256=s=>crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));
-const b64url=b=>btoa(String.fromCharCode(...new Uint8Array(b))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+const rand   = n=>{const a=new Uint8Array(n);crypto.getRandomValues(a);return[...a].map(b=>b.toString(16).padStart(2,'0')).join('')};
+const sha256 = s=>crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));
+const b64url = b=>btoa(String.fromCharCode(...new Uint8Array(b))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
 
 // ══ STATE ═════════════════════════════════════════════
 let CU=null, lbTab='tracks', profUid=null, profTab='posts', attachedTrack=null;
 let profData={user:null,posts:[],tops:null};
 let lbData={profiles:[],tops:[]};
-const isAdmin=()=>CU&&ADMINS.includes(CU.username);
-const esc=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-const medal=i=>i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1;
-const medalCls=i=>i===0?'gold':i===1?'silver':i===2?'bronze':'';
-const clean=v=>(v===undefined||v===null)?'':v;
-const av=u=>u?.spotifyAvatar||u?.avatar||genAv(u?.username);
+
+const isAdmin = ()=>CU&&ADMINS.includes(CU.username);
+const esc     = s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const medal   = i=>i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1;
+const medalCls= i=>i===0?'gold':i===1?'silver':i===2?'bronze':'';
+const clean   = v=>(v===undefined||v===null)?'':v;
+const av      = u=>u?.spotifyAvatar||u?.avatar||genAv(u?.username);
 
 function timeAgo(d){
   if(!d)return'?';
@@ -352,16 +361,18 @@ function timeAgo(d){
   if(s<60)return s+'s'; if(s<3600)return Math.floor(s/60)+'m';
   if(s<86400)return Math.floor(s/3600)+'h'; return Math.floor(s/86400)+'d';
 }
+
 function genAv(name){
   const hue=(name||'').split('').reduce((a,c)=>a+c.charCodeAt(0),0)%360;
   const init=(name||'?').slice(0,2).toUpperCase();
   const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="4" fill="hsl(${hue},50%,28%)"/><text x="20" y="26" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#39FF14">${init}</text></svg>`;
   return 'data:image/svg+xml;base64,'+btoa(svg);
 }
+
 function showAlert(id,msg,type='err'){
   const el=document.getElementById(id);if(!el)return;
   el.innerHTML=msg?`<div class="alert alert-${type}">${msg}</div>`:'';
-  if(msg&&type==='err')setTimeout(()=>{if(el.innerHTML.includes(msg.slice(0,10)))el.innerHTML=''},5000);
+  if(msg&&type==='err')setTimeout(()=>{if(el.innerHTML.includes(msg.slice(0,10)))el.innerHTML=''},6000);
 }
 
 // ══ NAV ═══════════════════════════════════════════════
@@ -383,49 +394,124 @@ function goPage(page,param){
   document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
   document.getElementById('page-'+page)?.classList.add('active');
   document.getElementById('nb-'+page)?.classList.add('active');
-  if(page==='feed')loadFeed();
-  if(page==='leaderboard')loadLeaderboard();
-  if(page==='about')renderAbout();
-  if(page==='profile'){profUid=param||CU?.id;profTab='posts';renderProfile();}
-  if(page==='settings')renderSettings();
-  if(page==='auth')switchAuthTab(param||'login');
+  if(page==='feed')        loadFeed();
+  if(page==='leaderboard') loadLeaderboard();
+  if(page==='about')       renderAbout();
+  if(page==='profile')     {profUid=param||CU?.id;profTab='posts';renderProfile();}
+  if(page==='settings')    renderSettings();
+  if(page==='auth')        switchAuthTab(param||'login');
 }
 
 // ══ AUTH ══════════════════════════════════════════════
 function switchAuthTab(tab){
-  document.getElementById('form-login').style.display=tab==='login'?'block':'none';
-  document.getElementById('form-register').style.display=tab==='register'?'block':'none';
-  document.querySelectorAll('#auth-tabs .tab').forEach((t,i)=>t.classList.toggle('active',i===(tab==='login'?0:1)));
+  ['login','register','forgot'].forEach(t=>{
+    document.getElementById('form-'+t).style.display=t===tab?'block':'none';
+  });
+  document.querySelectorAll('#auth-tabs .tab').forEach((t,i)=>
+    t.classList.toggle('active',['login','register','forgot'][i]===tab)
+  );
   showAlert('auth-alert','');
 }
 
 async function doRegister(){
+  const email=(document.getElementById('r-email').value||'').trim().toLowerCase();
   const u=(document.getElementById('r-user').value||'').trim().toLowerCase();
   const p=document.getElementById('r-pass').value;
   const p2=document.getElementById('r-pass2').value;
-  if(!u||!p){showAlert('auth-alert','Fill in all fields.');return}
+
+  if(!email||!u||!p){showAlert('auth-alert','Fill in all fields.');return}
+  if(!email.endsWith('@'+ALLOWED_DOMAIN)){showAlert('auth-alert',`Only @${ALLOWED_DOMAIN} email addresses are allowed.`);return}
   if(u.length<3||u.length>20){showAlert('auth-alert','Username must be 3–20 characters.');return}
-  if(!/^[a-z0-9_]+$/.test(u)){showAlert('auth-alert','Letters, numbers, and _ only.');return}
+  if(!/^[a-z0-9_]+$/.test(u)){showAlert('auth-alert','Username: letters, numbers, and _ only.');return}
   if(p.length<6){showAlert('auth-alert','Password must be at least 6 characters.');return}
   if(p!==p2){showAlert('auth-alert','Passwords do not match.');return}
+
   const unDoc=await db.collection('usernames').doc(u).get();
   if(unDoc.exists){showAlert('auth-alert','Username already taken.');return}
+
   try{
-    const cred=await auth.createUserWithEmailAndPassword(`${u}@jukebox.app`,p);
-    const uid=cred.user.uid,now=new Date().toISOString();
-    const user={id:uid,username:u,bio:'',avatar:'',country:'',spotifyLinked:false,spotifyDisplayName:'',spotifyAvatar:'',spotifyId:'',followers:0,joinedAt:now,updatedAt:now};
-    await Promise.all([db.collection('users').doc(uid).set(user),db.collection('usernames').doc(u).set({uid})]);
-  }catch(e){showAlert('auth-alert',e.message);}
+    const cred=await auth.createUserWithEmailAndPassword(email,p);
+    await cred.user.sendEmailVerification();
+    const uid=cred.user.uid, now=new Date().toISOString();
+    const user={id:uid,username:u,email,bio:'',avatar:'',country:'',spotifyLinked:false,spotifyDisplayName:'',spotifyAvatar:'',spotifyId:'',followers:0,joinedAt:now,updatedAt:now};
+    await Promise.all([
+      db.collection('users').doc(uid).set(user),
+      db.collection('usernames').doc(u).set({uid})
+    ]);
+    showAlert('auth-alert',`Account created! A verification email has been sent to <b>${email}</b>. Please verify before logging in.`,'ok');
+    document.getElementById('r-email').value='';
+    document.getElementById('r-user').value='';
+    document.getElementById('r-pass').value='';
+    document.getElementById('r-pass2').value='';
+  }catch(e){
+    showAlert('auth-alert',e.code==='auth/email-already-in-use'?'An account with this email already exists.':e.message);
+  }
 }
 
 async function doLogin(){
-  const u=(document.getElementById('l-user').value||'').trim().toLowerCase();
+  const email=(document.getElementById('l-email').value||'').trim().toLowerCase();
   const p=document.getElementById('l-pass').value;
-  if(!u||!p){showAlert('auth-alert','Fill in all fields.');return}
+  if(!email||!p){showAlert('auth-alert','Fill in all fields.');return}
+  if(!email.endsWith('@'+ALLOWED_DOMAIN)){showAlert('auth-alert',`Only @${ALLOWED_DOMAIN} email addresses are allowed.`);return}
   try{
-    await auth.signInWithEmailAndPassword(`${u}@jukebox.app`,p);
+    const cred=await auth.signInWithEmailAndPassword(email,p);
+    if(!cred.user.emailVerified){
+      await auth.signOut();
+      showAlert('auth-alert','Please verify your email before logging in. <button class="btn-link" onclick="resendVerificationToEmail(\''+email+'\',\''+p+'\')">Resend verification email</button>');
+      return;
+    }
   }catch(e){
-    showAlert('auth-alert',['auth/user-not-found','auth/wrong-password','auth/invalid-credential'].includes(e.code)?'Invalid username or password.':e.message);
+    showAlert('auth-alert',['auth/user-not-found','auth/wrong-password','auth/invalid-credential'].includes(e.code)?'Invalid email or password.':e.message);
+  }
+}
+
+async function doForgotPassword(){
+  const email=(document.getElementById('f-email').value||'').trim().toLowerCase();
+  if(!email){showAlert('auth-alert','Enter your email address.');return}
+  if(!email.endsWith('@'+ALLOWED_DOMAIN)){showAlert('auth-alert',`Only @${ALLOWED_DOMAIN} email addresses are allowed.`);return}
+  try{
+    await auth.sendPasswordResetEmail(email);
+    showAlert('auth-alert',`Password reset email sent to <b>${email}</b>. Check your inbox.`,'ok');
+    document.getElementById('f-email').value='';
+  }catch(e){
+    showAlert('auth-alert',e.code==='auth/user-not-found'?'No account found with that email.':e.message);
+  }
+}
+
+async function resendVerification(){
+  const user=auth.currentUser;
+  if(user&&!user.emailVerified){
+    await user.sendEmailVerification();
+    alert('Verification email resent!');
+  }
+}
+
+async function resendVerificationToEmail(email,pass){
+  try{
+    const cred=await auth.signInWithEmailAndPassword(email,pass);
+    await cred.user.sendEmailVerification();
+    await auth.signOut();
+    showAlert('auth-alert','Verification email resent! Check your inbox.','ok');
+  }catch(e){showAlert('auth-alert','Could not resend: '+e.message);}
+}
+
+async function changePassword(){
+  const np=document.getElementById('s-newpass').value;
+  const np2=document.getElementById('s-newpass2').value;
+  const msg=document.getElementById('s-pass-msg');
+  if(!np){msg.style.color='#f87171';msg.textContent='Enter a new password.';return}
+  if(np.length<6){msg.style.color='#f87171';msg.textContent='Password must be at least 6 characters.';return}
+  if(np!==np2){msg.style.color='#f87171';msg.textContent='Passwords do not match.';return}
+  try{
+    await auth.currentUser.updatePassword(np);
+    msg.style.color='var(--green)';msg.textContent='Password updated!';
+    document.getElementById('s-newpass').value='';
+    document.getElementById('s-newpass2').value='';
+    setTimeout(()=>{msg.textContent=''},3000);
+  }catch(e){
+    if(e.code==='auth/requires-recent-login'){
+      msg.style.color='#f87171';msg.textContent='Session expired — log out and back in first.';
+    }else{msg.style.color='#f87171';msg.textContent=e.message;}
   }
 }
 
@@ -433,19 +519,25 @@ function doLogout(){auth.signOut();}
 
 auth.onAuthStateChanged(async fbUser=>{
   if(fbUser){
+    if(!fbUser.emailVerified){
+      document.getElementById('verify-banner').style.display='flex';
+      CU=null;updateNav();
+      goPage('auth','login');
+      return;
+    }
+    document.getElementById('verify-banner').style.display='none';
     const doc=await db.collection('users').doc(fbUser.uid).get();
     if(doc.exists){
       CU={id:fbUser.uid,...doc.data()};
       updateNav();
-      // Always send logged-in users to feed, never home
-      const activePage=document.querySelector('.page.active');
-      const onPublicPage=activePage&&['page-auth','page-home'].includes(activePage.id);
-      if(!activePage||onPublicPage) goPage('feed');
+      const active=document.querySelector('.page.active');
+      if(!active||['page-auth','page-home'].includes(active.id)) goPage('feed');
     }
   }else{
+    document.getElementById('verify-banner').style.display='none';
     CU=null;updateNav();
-    if(!['page-leaderboard','page-about'].some(id=>document.getElementById(id)?.classList.contains('active')))
-      goPage('home');
+    const active=document.querySelector('.page.active');
+    if(!active||!['page-leaderboard','page-about','page-home'].includes(active?.id)) goPage('home');
   }
 });
 
@@ -602,10 +694,10 @@ function renderProfileHTML(){
     <div class="tabs" id="prof-tabs">
       <div class="tab ${profTab==='posts'?'active':''}" onclick="switchProfTab('posts')">Posts (${posts.length})</div>
       ${hasTops?`
-        <div class="tab ${profTab==='tracks'?'active':''}" onclick="switchProfTab('tracks')">Tracks</div>
+        <div class="tab ${profTab==='tracks'?'active':''}"  onclick="switchProfTab('tracks')">Tracks</div>
         <div class="tab ${profTab==='artists'?'active':''}" onclick="switchProfTab('artists')">Artists</div>
-        <div class="tab ${profTab==='genres'?'active':''}" onclick="switchProfTab('genres')">Genres</div>
-        <div class="tab ${profTab==='recent'?'active':''}" onclick="switchProfTab('recent')">Recent</div>
+        <div class="tab ${profTab==='genres'?'active':''}"  onclick="switchProfTab('genres')">Genres</div>
+        <div class="tab ${profTab==='recent'?'active':''}"  onclick="switchProfTab('recent')">Recent</div>
       `:''}
     </div>
     <div id="prof-tab-body"></div>`;
@@ -616,11 +708,11 @@ function switchProfTab(tab){
   profTab=tab;
   document.querySelectorAll('#prof-tabs .tab').forEach(t=>{
     t.classList.toggle('active',
-      (tab==='posts'&&t.textContent.startsWith('Posts'))||
-      (tab==='tracks'&&t.textContent==='Tracks')||
+      (tab==='posts'  &&t.textContent.startsWith('Posts'))||
+      (tab==='tracks' &&t.textContent==='Tracks')||
       (tab==='artists'&&t.textContent==='Artists')||
-      (tab==='genres'&&t.textContent==='Genres')||
-      (tab==='recent'&&t.textContent==='Recent')
+      (tab==='genres' &&t.textContent==='Genres')||
+      (tab==='recent' &&t.textContent==='Recent')
     );
   });
   renderProfTab();
@@ -741,57 +833,40 @@ function renderAbout(){
     <div style="background:linear-gradient(135deg,#0f2a0f,#0a0a0a);padding:60px 24px;text-align:center;border-bottom:1px solid var(--border)">
       <div class="sec-label">About</div>
       <h1 style="font-size:clamp(2rem,6vw,3.5rem);font-weight:900;color:var(--text);margin-bottom:16px">How Jukebox Works</h1>
-      <p style="font-size:.88rem;color:var(--muted);max-width:520px;margin:0 auto;line-height:1.7">A student-led platform bringing music lovers together through shared reviews and community-driven leaderboards.</p>
+      <p style="font-size:.88rem;color:var(--muted);max-width:520px;margin:0 auto;line-height:1.7">A Syracuse University student platform bringing music lovers together through shared listening stats and community leaderboards.</p>
     </div>
     <div class="page-inner">
-      <div class="card" style="margin-top:0">
-        <div class="stitle">The Mission</div>
-        <p style="font-size:.85rem;line-height:1.75;color:#ccc">Jukebox connects your Spotify account to surface your listening habits and share them with a community. Post what you're currently listening to, browse what others are playing, and see how your taste stacks up on the leaderboard.</p>
-      </div>
       <div class="card">
         <div class="stitle">Steps</div>
-        <div class="about-step"><div class="about-num">01</div><div><div class="about-step-title">Create an Account</div><div class="about-step-desc">Sign up with a username and password. Your account is stored securely in Firebase and persists across all devices.</div></div></div>
-        <div class="about-step"><div class="about-num">02</div><div><div class="about-step-title">Link Your Spotify</div><div class="about-step-desc">Go to Settings and connect Spotify using OAuth 2.0 PKCE. We never see your password. Top tracks, artists, genres, and recent plays sync to your profile.</div></div></div>
-        <div class="about-step"><div class="about-num">03</div><div><div class="about-step-title">Post to the Feed</div><div class="about-step-desc">Share thoughts or attach your currently playing track via the Now Playing button. Posts appear in the community feed in real time.</div></div></div>
+        <div class="about-step"><div class="about-num">01</div><div><div class="about-step-title">Create an Account</div><div class="about-step-desc">Sign up with your @g.syr.edu email. You'll receive a verification email before you can log in.</div></div></div>
+        <div class="about-step"><div class="about-num">02</div><div><div class="about-step-title">Link Your Spotify</div><div class="about-step-desc">Go to Settings and connect Spotify using OAuth 2.0 PKCE. Top tracks, artists, genres, and recent plays sync to your profile.</div></div></div>
+        <div class="about-step"><div class="about-num">03</div><div><div class="about-step-title">Post to the Feed</div><div class="about-step-desc">Share thoughts or attach your currently playing track. Posts appear in the community feed in real time.</div></div></div>
         <div class="about-step" style="margin-bottom:0"><div class="about-num">04</div><div><div class="about-step-title">Earn Your Rank</div><div class="about-step-desc">Your Spotify data feeds a global leaderboard ranking the most-listened-to tracks and artists across all users.</div></div></div>
       </div>
       <div class="card">
         <div class="stitle">Spotify API Endpoints</div>
-        <div class="endpoint-card"><code>GET /me/top/tracks</code><p>Top 20 played tracks over 6 months. Used for profile stats and track leaderboard.</p></div>
-        <div class="endpoint-card"><code>GET /me/top/artists</code><p>Top 20 played artists. Used for profile and artist leaderboard. Genres build your genre breakdown.</p></div>
-        <div class="endpoint-card"><code>GET /me/player/recently-played</code><p>Last 50 tracks with timestamps. Shown in your recent history tab.</p></div>
-        <div class="endpoint-card"><code>GET /me/player/currently-playing</code><p>Track currently playing. Used for Now Playing posts. Requires Spotify Premium.</p></div>
+        <div class="endpoint-card"><code>GET /me/top/tracks</code><p>Top 20 played tracks over 6 months.</p></div>
+        <div class="endpoint-card"><code>GET /me/top/artists</code><p>Top 20 played artists and genre breakdown.</p></div>
+        <div class="endpoint-card"><code>GET /me/player/recently-played</code><p>Last 50 tracks with timestamps.</p></div>
+        <div class="endpoint-card"><code>GET /me/player/currently-playing</code><p>Track currently playing. Requires Spotify Premium.</p></div>
         <div class="endpoint-card" style="margin-bottom:0"><code>GET /me</code><p>Your Spotify profile — display name, avatar, country, follower count.</p></div>
       </div>
       <div class="card">
-        <div class="stitle">Authentication</div>
-        <div class="auth-card"><div class="auth-card-title">Jukebox Accounts — Firebase Auth</div><p>Accounts use Firebase Authentication. Usernames map internally to <code style="color:var(--green);font-family:monospace">username@jukebox.app</code> so users only ever type a username.</p></div>
-        <div class="auth-card" style="margin-bottom:0"><div class="auth-card-title">Spotify — OAuth 2.0 PKCE</div><p>Spotify uses Authorization Code with PKCE — the standard for browser apps with no backend. A code verifier is generated locally, hashed, and exchanged for an access token entirely in the browser. Tokens expire after 1 hour.</p></div>
-      </div>
-      <div class="card">
         <div class="stitle">Database (Firestore)</div>
-        <div class="db-row"><code>users/{uid}</code><span>Profile — username, bio, avatar, Spotify info, country, followers.</span></div>
-        <div class="db-row"><code>usernames/{username}</code><span>Maps usernames to user IDs for login.</span></div>
-        <div class="db-row"><code>posts/{postId}</code><span>Feed posts — content, attached track, likes, timestamp.</span></div>
-        <div class="db-row"><code>tops/{uid}</code><span>Spotify snapshot — top tracks, artists, genres, recent plays.</span></div>
-      </div>
-      <div class="card">
-        <div class="stitle">Features</div>
-        <div class="feat-grid">
-          <div class="feat-item"><span>✓</span>Social feed with likes</div>
-          <div class="feat-item"><span>✓</span>Now Playing posts</div>
-          <div class="feat-item"><span>✓</span>Top tracks &amp; artists</div>
-          <div class="feat-item"><span>✓</span>Genre breakdown</div>
-          <div class="feat-item"><span>✓</span>Recently played</div>
-          <div class="feat-item"><span>✓</span>Global leaderboard</div>
-          <div class="feat-item"><span>✓</span>User profiles</div>
-          <div class="feat-item"><span>✓</span>Admin moderation</div>
-          <div class="feat-item"><span>✓</span>Spotify OAuth PKCE</div>
-          <div class="feat-item"><span>✓</span>Persistent accounts</div>
-        </div>
+        <div class="db-row"><code>users/{uid}</code><span>Profile — username, email, bio, Spotify info.</span></div>
+        <div class="db-row"><code>usernames/{username}</code><span>Maps usernames to user IDs for lookup.</span></div>
+        <div class="db-row"><code>posts/{postId}</code><span>Feed posts — content, track, likes, timestamp.</span></div>
+        <div class="db-row"><code>tops/{uid}</code><span>Spotify snapshot — tracks, artists, genres, recent plays.</span></div>
       </div>
     </div>
     <footer>
+      <svg width="72" height="72" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:8px">
+        <rect width="72" height="72" rx="16" fill="url(#jbg2)"/>
+        <defs><linearGradient id="jbg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3dd6b0"/><stop offset="100%" stop-color="#1a9e82"/></linearGradient></defs>
+        <rect x="18" y="36" width="10" height="22" rx="3" fill="white"/>
+        <rect x="31" y="26" width="10" height="32" rx="3" fill="white"/>
+        <rect x="44" y="18" width="10" height="40" rx="3" fill="white"/>
+      </svg>
       <div class="foot-logo">JukeBox</div>
       <p>A simple student project for sharing music reviews and climbing the community leaderboards.</p>
       <p>© 2026 Jukebox Project. Created for WRT 307.</p>
@@ -853,13 +928,13 @@ async function loadAdminPanel(){
     const snap=await db.collection('users').get();
     const users=snap.docs.map(d=>({id:d.id,...d.data()}));
     if(!users.length){el.innerHTML='<div class="alert alert-warn">No users found.</div>';return}
-    el.innerHTML=`<div style="font-size:.72rem;color:var(--muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px">${users.length} user${users.length!==1?'s':''} registered</div>`+
+    el.innerHTML=`<div style="font-size:.72rem;color:var(--muted);margin-bottom:10px">${users.length} user${users.length!==1?'s':''} registered</div>`+
       users.map(u=>`
         <div style="display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--border)">
           <img src="${av(u)}" style="width:32px;height:32px;border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.src='${genAv(u.username)}'">
           <div style="flex:1;min-width:0">
-            <div style="font-weight:700;font-size:.82rem;color:var(--green)">@${esc(u.username)} ${ADMINS.includes(u.username)?'<span style="font-size:.62rem;color:var(--muted)">(admin)</span>':''}</div>
-            <div style="font-size:.7rem;color:var(--sub)">${u.spotifyLinked?'Spotify linked':'No Spotify'} · Joined ${new Date(u.joinedAt).toLocaleDateString()}</div>
+            <div style="font-weight:700;font-size:.82rem;color:var(--green)">@${esc(u.username)}</div>
+            <div style="font-size:.7rem;color:var(--sub)">${esc(u.email||'')} · ${u.spotifyLinked?'Spotify linked':'No Spotify'}</div>
           </div>
           ${!ADMINS.includes(u.username)?`
             <button class="btn btn-dark btn-sm" onclick="goPage('profile','${u.id}')">View</button>
@@ -879,7 +954,8 @@ async function adminDeleteUser(uid,username){
   batch.delete(db.collection('tops').doc(uid));
   await batch.commit();
   await db.collection('usernames').doc(username).delete();
-  alert(`@${username} removed.`);
+  // Also delete from Firebase Auth
+  alert(`@${username} removed from database. Note: their Firebase Auth account may need manual removal from the Firebase console.`);
   loadAdminPanel();
 }
 
@@ -894,13 +970,12 @@ const spTok=()=>{
 async function startSpLink(){
   if(!CU)return;
   localStorage.setItem('sp_luid',CU.id);
-  const ruri=window.location.href.split('?')[0];
   const v=rand(32),ch=b64url(await sha256(v));
   localStorage.setItem('sp_ver',v);
   const u=new URL('https://accounts.spotify.com/authorize');
   u.searchParams.set('client_id',SPOTIFY_CLIENT_ID);
   u.searchParams.set('response_type','code');
-  u.searchParams.set('redirect_uri',ruri);
+  u.searchParams.set('redirect_uri',REDIRECT_URI);
   u.searchParams.set('code_challenge_method','S256');
   u.searchParams.set('code_challenge',ch);
   u.searchParams.set('scope','user-top-read user-read-recently-played user-read-private user-read-currently-playing');
@@ -911,11 +986,10 @@ async function handleSpCallback(code){
   const v=localStorage.getItem('sp_ver');
   const luid=localStorage.getItem('sp_luid');
   if(!v||!luid){console.error('Missing verifier or luid');return}
-  const ruri=window.location.href.split('?')[0];
   try{
     const r=await fetch('https://accounts.spotify.com/api/token',{
       method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      body:new URLSearchParams({client_id:SPOTIFY_CLIENT_ID,grant_type:'authorization_code',code,redirect_uri:ruri,code_verifier:v})
+      body:new URLSearchParams({client_id:SPOTIFY_CLIENT_ID,grant_type:'authorization_code',code,redirect_uri:REDIRECT_URI,code_verifier:v})
     });
     const d=await r.json();
     if(!d.access_token){alert('Spotify link failed: '+(d.error_description||d.error||'unknown'));return}
@@ -1000,7 +1074,7 @@ window.addEventListener('load',async()=>{
   if(code||err){
     history.replaceState({},document.title,window.location.pathname);
     if(code){
-      await new Promise(resolve=>{const unsub=auth.onAuthStateChanged(fbUser=>{unsub();resolve(fbUser);});});
+      await new Promise(resolve=>{const unsub=auth.onAuthStateChanged(u=>{unsub();resolve(u);});});
       await handleSpCallback(code);
       if(CU){
         const doc=await db.collection('users').doc(CU.id).get();
@@ -1009,7 +1083,6 @@ window.addEventListener('load',async()=>{
       }
     }
   }
-  // Default to home page on first load
   if(!document.querySelector('.page.active'))goPage('home');
 });
 </script>

@@ -158,7 +158,15 @@ footer p{font-size:.74rem;color:var(--sub);margin-top:4px}
 </div>
 
 <nav>
-  <div class="nav-logo" onclick="goPage('home')">JUKEBOX</div>
+  <div class="nav-logo" onclick="goPage('home')">
+    <svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;border-radius:6px">
+      <rect width="72" height="72" rx="14" fill="url(#navgrad)"/>
+      <defs><linearGradient id="navgrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3dd6b0"/><stop offset="100%" stop-color="#1a9e82"/></linearGradient></defs>
+      <rect x="18" y="36" width="10" height="22" rx="3" fill="white"/>
+      <rect x="31" y="26" width="10" height="32" rx="3" fill="white"/>
+      <rect x="44" y="18" width="10" height="40" rx="3" fill="white"/>
+    </svg>JUKEBOX
+  </div>
   <div class="nav-center">
     <button class="nb" id="nb-feed" onclick="goPage('feed')">Feed</button>
     <button class="nb" id="nb-leaderboard" onclick="goPage('leaderboard')">Leaderboard</button>
@@ -183,12 +191,15 @@ footer p{font-size:.74rem;color:var(--sub);margin-top:4px}
     </div>
   </div>
   <footer>
-    <svg width="72" height="72" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:8px">
-      <rect width="72" height="72" rx="16" fill="url(#jbg)"/>
-      <defs><linearGradient id="jbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3dd6b0"/><stop offset="100%" stop-color="#1a9e82"/></linearGradient></defs>
-      <rect x="18" y="36" width="10" height="22" rx="3" fill="white"/>
-      <rect x="31" y="26" width="10" height="32" rx="3" fill="white"/>
-      <rect x="44" y="18" width="10" height="40" rx="3" fill="white"/>
+    <svg width="72" height="72" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:8px">
+      <defs>
+        <linearGradient id="ft" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3dd6b0"/><stop offset="100%" stop-color="#1a9e82"/></linearGradient>
+        <linearGradient id="fw" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8B5E3C"/><stop offset="50%" stop-color="#6B3F1F"/><stop offset="100%" stop-color="#8B5E3C"/></linearGradient>
+      </defs>
+      <rect width="76" height="76" rx="14" fill="url(#fw)"/>
+      <rect x="6" y="6" width="64" height="64" rx="10" fill="url(#ft)"/>
+      <path d="M14,68 L14,36 Q14,10 38,8 Q62,10 62,36 L62,68 Z" fill="white"/>
+      <path d="M22,35 Q22,16 38,14 Q54,16 54,35 L54,40 L22,40 Z" fill="url(#ft)"/>
     </svg>
     <div class="foot-logo">JukeBox</div>
     <p>A simple student project for sharing music reviews and climbing the community leaderboards.</p>
